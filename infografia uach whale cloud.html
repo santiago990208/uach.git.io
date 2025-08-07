@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Estratégica: UACH y Whale Cloud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #EBF7FB;
+            color: #1e293b;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 350px;
+            }
+        }
+        .kpi-card {
+            background-color: #ffffff;
+            border-left: 5px solid #004AAD;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .flowchart-node {
+            border: 2px solid #0094D1;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .flowchart-arrow {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background-color: #0094D1;
+        }
+        .flowchart-arrow::after {
+            content: '▶';
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0094D1;
+            font-size: 1.2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #004AAD;
+            border: 3px solid #78C6E6;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -21px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #B3E2F2;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-[#004AAD] mb-2">Alianza Estratégica para la Transformación Digital</h1>
+            <p class="text-xl md:text-2xl font-semibold text-[#0094D1]">UACH + Whale Cloud: Co-creando el Futuro de la Educación Superior</p>
+        </header>
+
+        <section id="opportunity" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">1. El Momento Estratégico de la UACH</h2>
+                <p class="text-lg text-slate-700 mb-8 max-w-4xl mx-auto text-center">
+                    La UACH no es una espectadora del cambio, es su protagonista. Con una visión clara y una base tecnológica sólida, se encuentra en la posición ideal para dar su siguiente salto cuántico. El desafío actual no es de capacidad, sino de integración: unificar un ecosistema digital robusto pero fragmentado para crear una experiencia de clase mundial.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="flex flex-col justify-center items-center">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4">El Ecosistema Digital Actual</h3>
+                        <div class="w-full max-w-md p-4">
+                            <div class="flex justify-center items-center mb-4">
+                                <div class="text-6xl">👤</div>
+                                <div class="ml-4 text-xl font-bold text-slate-800">Estudiante / Docente</div>
+                            </div>
+                            <div class="relative flex flex-col items-center">
+                                <div class="h-16 w-1 bg-[#0094D1]"></div>
+                                <div class="w-full h-1 bg-[#0094D1] -mt-1"></div>
+                                <div class="absolute top-16 left-0 w-1 h-12 bg-[#0094D1] transform -rotate-45 origin-top-left"></div>
+                                <div class="absolute top-16 right-0 w-1 h-12 bg-[#0094D1] transform rotate-45 origin-top-right"></div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-4 mt-8 text-center">
+                                <div class="flowchart-node p-2 rounded-lg">
+                                    <span class="text-3xl">📱</span>
+                                    <p class="font-semibold text-sm">MiSEGA</p>
+                                </div>
+                                <div class="flowchart-node p-2 rounded-lg">
+                                    <span class="text-3xl">🌐</span>
+                                    <p class="font-semibold text-sm">Campus Virtual</p>
+                                </div>
+                                <div class="flowchart-node p-2 rounded-lg">
+                                    <span class="text-3xl">ℹ️</span>
+                                    <p class="font-semibold text-sm">UACH Móvil</p>
+                                </div>
+                                <div class="flowchart-node p-2 rounded-lg">
+                                    <span class="text-3xl">💳</span>
+                                    <p class="font-semibold text-sm">Pagos</p>
+                                </div>
+                                <div class="flowchart-node p-2 rounded-lg">
+                                    <span class="text-3xl">📚</span>
+                                    <p class="font-semibold text-sm">SUBA</p>
+                                </div>
+                                <div class="flowchart-node p-2 rounded-lg">
+                                    <span class="text-3xl">✅</span>
+                                    <p class="font-semibold text-sm">Admisiones</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-center text-slate-600 max-w-md">Múltiples puntos de contacto generan una experiencia fragmentada. La oportunidad es unificar, no reemplazar.</p>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="digitalAdoptionChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-center text-slate-600">La alta adopción de `MiSEGA Alumno` (+10,000 descargas) valida la demanda de servicios móviles y presenta la plataforma de lanzamiento perfecta para una SuperApp, minimizando la fricción y maximizando la adopción inicial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">2. La Solución: SuperApp "MI UACH"</h2>
+                <p class="text-lg text-slate-700 mb-8 max-w-4xl mx-auto text-center">
+                    Proponemos un cambio de paradigma inspirado en los ecosistemas tecnológicos más avanzados de Asia. No una app más, sino una SuperApp: un portal único que unifica la vida universitaria, impulsado por la agilidad de la tecnología de Miniprogramas.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="devTimeChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-center text-slate-600">La tecnología de Miniprogramas reduce el tiempo de desarrollo hasta en un 70%, permitiendo a la UACH innovar y desplegar nuevos servicios a una velocidad sin precedentes.</p>
+                    </div>
+                    <div class="flex flex-col justify-center items-center">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4">El Modelo de "Doble Motor"</h3>
+                        <div class="w-full max-w-lg space-y-4">
+                            <div class="flowchart-node p-4 rounded-lg text-center">
+                                <p class="font-bold">Motor 1: Servicios Esenciales</p>
+                                <p class="text-sm">Calificaciones, horarios, pagos. Generan confianza y alto tráfico diario (DAU).</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="flowchart-arrow"></div>
+                            </div>
+                            <div class="flowchart-node p-4 rounded-lg text-center">
+                                <p class="font-bold">Motor 2: Ecosistema de Valor</p>
+                                <p class="text-sm">Bolsa de trabajo, descuentos, proyectos estudiantiles. Generan prestigio e ingresos.</p>
+                            </div>
+                        </div>
+                         <p class="mt-4 text-center text-slate-600 max-w-md">Este modelo crea un círculo virtuoso: los servicios esenciales atraen usuarios, y la alta base de usuarios atrae a socios que enriquecen la plataforma, haciéndola indispensable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">3. El Impacto: Experiencia Unificada y de Prestigio</h2>
+                <p class="text-lg text-slate-700 mb-8 max-w-4xl mx-auto text-center">
+                    La SuperApp "MI UACH" trasciende la conveniencia. Se convierte en un motor de prestigio, cataliza la innovación estudiantil y genera un legado de liderazgo digital, con resultados probados en el mercado latinoamericano.
+                </p>
+                <div class="bg-[#004AAD] text-white rounded-lg p-8 mb-8 shadow-xl">
+                    <h3 class="text-2xl font-bold text-center mb-4">Caso de Éxito: SuperApp Mi Claro (Colombia)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="text-4xl font-black">~20M</p>
+                            <p class="font-semibold">Usuarios Totales</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-black">100+</p>
+                            <p class="font-semibold">Miniprogramas Lanzados</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-black">60%</p>
+                            <p class="font-semibold">Mejora en Eficiencia</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-center text-blue-200">Este caso demuestra que el modelo de SuperApp no es solo una teoría, sino una realidad exitosa y replicable en nuestra región, capaz de crear ecosistemas vibrantes en tiempo récord.</p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-[#004AAD] mb-6 text-center">Una Interfaz Personalizada para Cada Miembro</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="kpi-card rounded-lg p-4 text-center">
+                        <p class="text-4xl mb-2">🎓</p>
+                        <p class="font-bold text-lg text-[#004AAD]">Estudiante</p>
+                        <p class="text-sm text-slate-600">Horarios, calificaciones, vida social, marketplace de proyectos.</p>
+                    </div>
+                    <div class="kpi-card rounded-lg p-4 text-center">
+                        <p class="text-4xl mb-2">👨‍🏫</p>
+                        <p class="font-bold text-lg text-[#004AAD]">Docente</p>
+                        <p class="text-sm text-slate-600">Listas, gestión de cursos, convocatorias de investigación.</p>
+                    </div>
+                    <div class="kpi-card rounded-lg p-4 text-center">
+                        <p class="text-4xl mb-2">🚀</p>
+                        <p class="font-bold text-lg text-[#004AAD]">Aspirante</p>
+                        <p class="text-sm text-slate-600">Proceso de admisión guiado, información de carreras.</p>
+                    </div>
+                    <div class="kpi-card rounded-lg p-4 text-center">
+                        <p class="text-4xl mb-2">🌐</p>
+                        <p class="font-bold text-lg text-[#004AAD]">Egresado</p>
+                        <p class="text-sm text-slate-600">Bolsa de trabajo, networking, noticias de la alma mater.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="future" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">4. El Futuro: IA de Vanguardia y Nube Soberana</h2>
+                <p class="text-lg text-slate-700 mb-8 max-w-4xl mx-auto text-center">
+                   La SuperApp conecta. La Inteligencia Artificial permite crear, con nuestra IA de clase mundial y una infraestructura de nube que garantiza escalabilidad, seguridad y, fundamentalmente, soberanía total de los datos para la UACH.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">IA para Potenciar la Investigación</h3>
+                         <div class="chart-container">
+                            <canvas id="aiImpactChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-center text-slate-600">Proponemos co-crear soluciones de IA que potencien las áreas de fortaleza de la UACH, desde la ingeniería hasta la agrotecnología, acelerando la investigación y generando prestigio académico.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4 text-center">Nube Soberana: Innovación con Control</h3>
+                        <div class="w-full max-w-md mx-auto flowchart-node p-6 rounded-lg text-center">
+                             <p class="text-4xl mb-2">🛡️</p>
+                            <p class="font-bold text-lg text-[#004AAD]">Datos de la UACH</p>
+                            <p class="text-sm text-slate-600 mb-4">Residen en una instancia de nube soberana, propiedad y control total de la universidad.</p>
+                            <div class="text-2xl font-bold text-[#0094D1]">↕️</div>
+                            <p class="font-semibold text-sm text-[#0094D1]">API Segura y Controlada</p>
+                            <div class="text-2xl font-bold text-[#0094D1]">↕️</div>
+                            <div class="bg-blue-100 p-4 rounded-lg">
+                                <p class="text-4xl mb-2">☁️</p>
+                                <p class="font-bold text-lg text-[#004AAD]">Tecnología Whale Cloud</p>
+                                <p class="text-sm text-slate-600">Capa de SuperApp y Miniprogramas que habilita la funcionalidad sin poseer los datos.</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-center text-slate-600">Este modelo ofrece lo mejor de ambos mundos: la innovación de un hiperescalador global con el control y la seguridad que una institución pública requiere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partnership" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">5. La Alianza: Hoja de Ruta hacia el Éxito</h2>
+                <p class="text-lg text-slate-700 mb-8 max-w-4xl mx-auto text-center">
+                    Proponemos una alianza estratégica, no una relación de proveedor. Un camino de co-creación con fases claras para asegurar resultados tangibles y construir un legado de innovación duradero.
+                </p>
+                <div class="relative pl-8">
+                    <div class="timeline-line"></div>
+                    <div class="space-y-12">
+                        <div class="relative timeline-item">
+                            <h3 class="text-xl font-bold text-[#004AAD]">Fase 1: Descubrimiento y Diseño (2 Meses)</h3>
+                            <p class="text-slate-700">Talleres de co-creación para definir el MVP de "MI UACH", priorizar Miniprogramas y establecer métricas de éxito.</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h3 class="text-xl font-bold text-[#004AAD]">Fase 2: Construcción e Integración (6 Meses)</h3>
+                            <p class="text-slate-700">Desarrollo del núcleo de la SuperApp, integrando SDK en `MiSEGA Alumno` y construyendo los primeros Miniprogramas.</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h3 class="text-xl font-bold text-[#004AAD]">Fase 3: Lanzamiento y Puesta en Marcha (3 Meses)</h3>
+                            <p class="text-slate-700">Lanzamiento oficial a la comunidad, campaña de adopción y el "Chihuahua Innovation Challenge" para crear el ecosistema.</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h3 class="text-xl font-bold text-[#004AAD]">Fase 4: Evolución Continua (Permanente)</h3>
+                            <p class="text-slate-700">Expansión del ecosistema con socios, despliegue de la plataforma de IA y consolidación del modelo de negocio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 py-6 border-t-2 border-[#B3E2F2]">
+             <h3 class="text-2xl font-bold text-[#004AAD] mb-2">El Siguiente Paso</h3>
+             <p class="text-lg text-slate-700 mb-4">Le extendemos una invitación formal a una sesión de trabajo estratégica para co-crear el plan de acción detallado.</p>
+             <p class="text-lg font-semibold text-[#004AAD]">Juntos, podemos forjar el legado digital de la UACH.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const wrapLabel = (label) => {
+                const maxLength = 16;
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                }
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+            
+            const sharedTooltipOptions = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            };
+
+            const colors = {
+                primary: '#004AAD',
+                secondary: '#0094D1',
+                tertiary: '#78C6E6',
+                accent: '#B3E2F2',
+                bg: '#EBF7FB'
+            };
+
+            new Chart(document.getElementById('digitalAdoptionChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['MiSEGA Alumno (Alta Adopción)', 'Otras Apps (Baja Adopción)', 'Web Móvil'],
+                    datasets: [{
+                        label: 'Adopción Digital',
+                        data: [65, 15, 20],
+                        backgroundColor: [colors.secondary, colors.tertiary, colors.accent],
+                        borderColor: colors.bg,
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...sharedTooltipOptions.plugins,
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Adopción del Ecosistema Móvil Actual',
+                            font: { size: 16, weight: 'bold' },
+                            color: colors.primary
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('devTimeChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['App Nativa Tradicional', 'Miniprograma en SuperApp'],
+                    datasets: [{
+                        label: 'Tiempo de Desarrollo (Semanas)',
+                        data: [24, 7],
+                        backgroundColor: [colors.tertiary, colors.secondary],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...sharedTooltipOptions.plugins,
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Agilidad de Desarrollo: Nativo vs. Miniprograma',
+                            font: { size: 16, weight: 'bold' },
+                            color: colors.primary
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: { display: false }
+                        },
+                        y: {
+                           grid: { display: false }
+                        }
+                    }
+                }
+            });
+            
+            new Chart(document.getElementById('aiImpactChart'), {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Impacto en Investigación', 
+                        'Prestigio Académico', 
+                        'Innovación Estudiantil', 
+                        'Eficiencia Operativa', 
+                        'Atracción de Talento'
+                    ].map(wrapLabel),
+                    datasets: [{
+                        label: 'Impacto de la Plataforma IA',
+                        data: [9, 8, 9, 7, 8],
+                        fill: true,
+                        backgroundColor: 'rgba(0, 148, 209, 0.2)',
+                        borderColor: colors.secondary,
+                        pointBackgroundColor: colors.secondary,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: colors.secondary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                     plugins: {
+                        ...sharedTooltipOptions.plugins,
+                        title: {
+                            display: true,
+                            text: 'Potencial de la Plataforma de IA',
+                            font: { size: 16, weight: 'bold' },
+                            color: colors.primary
+                        },
+                        legend: {
+                           display: false
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { color: colors.accent },
+                            grid: { color: colors.accent },
+                            pointLabels: {
+                                font: { size: 12 },
+                                color: '#334155'
+                            },
+                            ticks: {
+                                backdropColor: colors.bg,
+                                color: colors.primary
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
