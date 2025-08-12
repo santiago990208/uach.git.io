@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claro VioceBot - Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-header h1 {
+            color: #DF2A3F;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #DF2A3F, #007ACC);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .demo-actions {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-btn {
+            background: #DF2A3F;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .demo-btn:hover {
+            background: #B91C3A;
+            transform: translateY(-2px);
+        }
+        
+        .demo-btn.secondary {
+            background: #F5F5F5;
+            color: #666;
+            border: 1px solid #DDD;
+        }
+        
+        .demo-btn.secondary:hover {
+            background: #E0E0E0;
+        }
+        
+        .usage-examples {
+            background: #F8F9FA;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .usage-examples h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .example-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .example-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #DF2A3F;
+        }
+        
+        .example-item h4 {
+            color: #DF2A3F;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .tech-stack {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-stack h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+        
+        .tech-item h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI1IiB5PSIyNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0RGMkEzRiI+Q2xhcm88L3RleHQ+Cjwvc3ZnPgo=" alt="Claro Logo">
+            </div>
+            <div class="id-display">
+                <span>Demo - VioceBot</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Demo Content -->
+    <main class="main-content">
+        <div class="demo-container">
+            <!-- Demo Header -->
+            <div class="demo-header">
+                <h1>Claro VioceBot</h1>
+                <p>Asistente de voz inteligente para el registro de empresas. Experimenta la nueva forma de interactuar con nuestro portal de comerciantes.</p>
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Reconocimiento de Voz</h3>
+                    <p>Habla en español y nuestro asistente te entenderá perfectamente. Soporte completo para el idioma español con alta precisión.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>IA Inteligente</h3>
+                    <p>Respuestas contextuales y naturales. El asistente entiende el contexto de la conversación y proporciona ayuda relevante.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Llenado Automático</h3>
+                    <p>Los datos que proporciones por voz se llenarán automáticamente en el formulario. Ahorra tiempo y reduce errores.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-closed-captioning"></i>
+                    </div>
+                    <h3>Subtítulos en Tiempo Real</h3>
+                    <p>Visualiza toda la conversación con subtítulos en tiempo real. Opción de activar o desactivar según tu preferencia.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Diseño Responsivo</h3>
+                    <p>Funciona perfectamente en cualquier dispositivo: computadora, tablet o teléfono móvil. Experiencia optimizada para todos.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguro y Confiable</h3>
+                    <p>Procesamiento seguro de datos con encriptación. Cumple con los estándares de seguridad más altos de la industria.</p>
+                </div>
+            </div>
+
+            <!-- Demo Actions -->
+            <div class="demo-actions">
+                <a href="index.html" class="demo-btn">
+                    <i class="fas fa-play"></i>
+                    Probar VioceBot
+                </a>
+                <a href="#usage" class="demo-btn secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Ver Ejemplos
+                </a>
+            </div>
+
+            <!-- Usage Examples -->
+            <div class="usage-examples" id="usage">
+                <h2>Ejemplos de Uso</h2>
+                <div class="example-list">
+                    <div class="example-item">
+                        <h4>Información de la Empresa</h4>
+                        <p>"Mi empresa se llama Restaurante El Buen Sabor S.A"</p>
+                    </div>
+                    <div class="example-item">
+                        <h4>Dirección</h4>
+                        <p>"La dirección es Calle 15 #23-45, Bogotá"</p>
+                    </div>
+                    <div class="example-item">
+                        <h4>Teléfono</h4>
+                        <p>"El teléfono es 324 347 8909"</p>
+                    </div>
+                    <div class="example-item">
+                        <h4>Actividad Económica</h4>
+                        <p>"Somos un restaurante de comida colombiana"</p>
+                    </div>
+                    <div class="example-item">
+                        <h4>Documento</h4>
+                        <p>"El NIT es 900123456-7"</p>
+                    </div>
+                    <div class="example-item">
+                        <h4>Ayuda General</h4>
+                        <p>"¿Puedes ayudarme a completar el formulario?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="tech-stack">
+                <h2>Tecnologías Utilizadas</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h4>Web Speech API</h4>
+                        <p>Reconocimiento y síntesis de voz nativo del navegador</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>JavaScript ES6+</h4>
+                        <p>Programación moderna con clases y async/await</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>CSS3</h4>
+                        <p>Diseño responsivo con Grid y Flexbox</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>HTML5</h4>
+                        <p>Semántica moderna y accesibilidad</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Font Awesome</h4>
+                        <p>Iconos profesionales y consistentes</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Responsive Design</h4>
+                        <p>Adaptación automática a todos los dispositivos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Assistant Button -->
+            <div class="voice-assistant-trigger">
+                <button class="voice-btn" onclick="window.open('index.html', '_blank')">
+                    <i class="fas fa-microphone"></i>
+                    <span>Probar Ahora</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: white; text-align: center; padding: 2rem; margin-top: 4rem;">
+        <p>&copy; 2025 Claro. Todos los derechos reservados.</p>
+        <p>VioceBot - Asistente de Voz Inteligente</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards and other elements
+        document.querySelectorAll('.feature-card, .example-item, .tech-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 
